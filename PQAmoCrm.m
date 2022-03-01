@@ -2,7 +2,7 @@ let
     sourceFn = Expression.Evaluate(
         Text.FromBinary(
             Binary.Buffer(
-                Web.Contents("")
+                Web.Contents("https://github.com/maiklfoks/connet.git")
             )
         ), #shared)
 in

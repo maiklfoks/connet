@@ -54,7 +54,7 @@ getFn = (limits as text, url as text, authQuery as record) =>
 
         getQuery  = Json.Document(Web.Contents(url,
             [
-                RelativePath="/private/api/v2/json/leads/list",
+                RelativePath="/private//oauth2/json/leads/list",
                 Query=newAuthQuery
             ])),
         toTable = Record.ToTable(getQuery),
