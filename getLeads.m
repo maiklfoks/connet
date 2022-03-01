@@ -13,7 +13,7 @@ getFn = (limits as text, url as text, authQuery as record) =>
             url,
                 [
                     RelativePath="/oauth2/access_token",
-                    Query=authQuery
+                    Query=OAuth
                 ]),
 
         getAccountInfo = guideConnect(url, authQuery),
@@ -48,14 +48,14 @@ getFn = (limits as text, url as text, authQuery as record) =>
 
 
         newAuthQuery = Record.Combine({
-            authQuery,
+             OAuth,
             [limit_rows ="500"],
             [limit_offset=limits]}),
 
         getQuery  = Json.Document(Web.Contents(url,
             [
                 RelativePath="/private//oauth2/json/leads/list",
-                Query=newAuthQuery
+                Query=newOAuth
             ])),
         toTable = Record.ToTable(getQuery),
         delOther = Table.SelectColumns(toTable,{"Value"}),

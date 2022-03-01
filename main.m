@@ -8,11 +8,6 @@ amoFn = (method as text, domen as text, login as text, hash as text) =>
                Refresh = Refresh,
                Logout = Logout
            ],
-           Key = [],
-           UsernamePassword = [],
-           Windows = [],
-           Implicit = []
-       ],
         url = "https://"&domen&".amocrm.ru",
         limit = if limits = null then 20000 else limits,
 
