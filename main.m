@@ -14,7 +14,7 @@ amoFn = (method as text, domen as text, login as text, hash as text, limits as n
                 sourceFn = Expression.Evaluate(
                     Text.FromBinary(
                         Binary.Buffer(
-                            Web.Contents("https://github.com/maiklfoks/connet/blob/main/PQAmoCrm.m"&function&".m")
+                            Web.Contents("https://github.com/maiklfoks/connet/main/PQAmoCrm.m"&function&".m")
                         )
                     ), #shared)
             in
