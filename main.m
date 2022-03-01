@@ -1,11 +1,18 @@
 let
-amoFn = (method as text, domen as text, login as text, hash as text, limits as nullable number) =>
+amoFn = (method as text, domen as text, login as text, hash as text) =>
     let
-        authQuery =
-            [
-                USER_LOGIN=login,
-                USER_HASH=hash
-                ],
+       Authentication = [
+           OAuth = [
+               StartLogin = StartLogin,
+               FinishLogin = FinishLogin,
+               Refresh = Refresh,
+               Logout = Logout
+           ],
+           Key = [],
+           UsernamePassword = [],
+           Windows = [],
+           Implicit = []
+       ],
         url = "https://"&domen&".amocrm.ru",
         limit = if limits = null then 20000 else limits,
 
